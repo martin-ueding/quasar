@@ -2,8 +2,9 @@
 
 java := $(wildcard *.java)
 class := $(java:.java=.class)
+properties := $(wildcard *.properties)
 
-kollisionskurs.jar: manifest.mf $(class) pic makefile
+quasar.jar: manifest.mf $(class) hintergrund.png makefile $(properties)
 	jar -cfm $@ $^ *.class
 
 %.class: %.java
